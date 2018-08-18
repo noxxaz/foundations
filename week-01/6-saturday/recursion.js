@@ -12,22 +12,22 @@ function factorial(n) {
     return n * factorial(n - 1);
 }
 
-  // Test cases
-  console.log(factorial(4)); // 4 * 3 * 2 * 1 ---> 24
-  console.log(factorial(5)); // 5 * 4 * 3 * 2 * 1 ---> 120
+// Test cases
+console.log(factorial(4)); // 4 * 3 * 2 * 1 ---> 24
+console.log(factorial(5)); // 5 * 4 * 3 * 2 * 1 ---> 120
 
 
 // Using recursion, write a function called countUp that takes one 
 // parameter, n, and prints all the numbers from 1 to n into the console.
 
 function countUp(n) {
-if (n === 1) {
-    console.log(n);
-} else {
-    countUp(n - 1);
-    console.log(n);
-}
-return;
+    if (n === 1) {
+        console.log(n);
+    } else {
+        countUp(n - 1);
+        console.log(n);
+    }
+    return;
 }
 
 countUp(10);
@@ -37,13 +37,13 @@ countUp(10);
 // It should do the same as countUp, but instead of counting up, it counts down.
 
 function countDown(n) {
-if (n === 1) {
-    console.log(n);
-} else {
-    console.log(n);
-    countDown(n - 1);
-}
-return;
+    if (n === 1) {
+        console.log(n);
+    } else {
+        console.log(n);
+        countDown(n - 1);
+    }
+    return;
 }
 
 countDown(10);
@@ -52,10 +52,10 @@ countDown(10);
 // and returns the sum of all integers up to n starting from 0.
 
 function sum(n) {
-if (n > 0) {
-    n = n + (sum(n - 1));
-}
-return n;
+    if (n > 0) {
+        n = n + (sum(n - 1));
+    }
+    return n;
 }
 
 console.log(sum(10)); //55
@@ -67,7 +67,7 @@ var laughter = "";
 
 function laugh(n) {
     if (n > 0) {
-        laughter = "ha" + laughter + (laugh(n - 1));
+        return "ha" + laughter + (laugh(n - 1));
     }
     return laughter;
 }
@@ -106,10 +106,24 @@ function anotherSum(start, end) {
     return end;
 
 }
- // Tests
-  console.log(anotherSum(2, 7)); // => 2 + 3 + 4 + 5 + 6 + 7 => 27
-  console.log(anotherSum(3, 5)); // => 3 + 4 + 5 => 12
+// Tests
+console.log(anotherSum(2, 7)); // => 2 + 3 + 4 + 5 + 6 + 7 => 27
+console.log(anotherSum(3, 5)); // => 3 + 4 + 5 => 12
   
+
+// Write a function product that works like anotherSum, except it should 
+// compute the product of the numbers from start to end. Remember to test it out!
+
+function product(num1, num2) {
+    if (num1 === 1){
+        return num2
+    } else {
+        return num2 + product(num1 - 1, num2);
+    }
+}
+
+console.log(product(3,33));
+
 
 // Let's pretend that JavaScript does not have the addition operator + and 
 // subtraction operator -. Instead, it comes with two functions called inc 
@@ -130,7 +144,7 @@ function inc(x) {
 function add(x, y) {
     if(y === 0){
         console.log(x);
-        return x;
+//        return x;
     } else {
         add(inc(x), dec(y));
     }
