@@ -83,3 +83,37 @@ function fizzBuzz() {
 }
 
 fizzBuzz();
+
+// Write a program that creates a string that represents an 8×8 grid, 
+// using newline characters to separate lines. At each position of the 
+// grid there is either a space or a "#" character. The characters should 
+// form a chessboard.
+
+function checkerBoard(n) {
+// Only works with even numbers. 
+
+    var board = "";
+
+    for(i = 1; i <= (n / 2); i++) {
+        for (j = 1; j <= n; j++){
+            if(j % 2 === 0) {
+                board += "#";
+            } else {
+                board += " ";
+            }           
+        }
+        board += "\n";
+
+        for (k = 1; k <= n; k++){
+            if(k % 2 === 1) {
+                board += "#";
+            } else {
+                board += " ";
+            }           
+        }
+        board += "\n";
+    }
+
+    return board;
+}
+console.log(checkerBoard(5));
