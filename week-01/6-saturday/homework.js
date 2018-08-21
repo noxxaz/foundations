@@ -125,14 +125,14 @@ console.log(anotherGreeting("Mary", false, true)); // => "Hello, Mary!";
 console.log(anotherGreeting("Felix", true, false)); // => "Goodbye, Felix-san.";
 console.log(anotherGreeting("Felix", false, false)); // => "Goodbye, Felix!";
 
-function anotherGreeting(name, respectful, hello){
-    if (respectful) {
+function anotherGreeting(name, isRespectful, isHello){
+    if (isRespectful) {
         name += "-san."
     } else {
         name += "!"
     }
 
-    if (hello) {
+    if (isHello) {
         return "Hello, " + name;
     } else {
         return "Goodbye, " + name;
