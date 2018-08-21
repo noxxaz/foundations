@@ -117,3 +117,24 @@ function checkerBoard(n) {
     return board;
 }
 console.log(checkerBoard(5));
+
+
+// Another AnotherGreeting
+console.log(anotherGreeting("Mary", true, true)); // should print "Hello, Mary-san.";
+console.log(anotherGreeting("Mary", false, true)); // => "Hello, Mary!";
+console.log(anotherGreeting("Felix", true, false)); // => "Goodbye, Felix-san.";
+console.log(anotherGreeting("Felix", false, false)); // => "Goodbye, Felix!";
+
+function anotherGreeting(name, respectful, hello){
+    if (respectful) {
+        name += "-san."
+    } else {
+        name += "!"
+    }
+
+    if (hello) {
+        return "Hello, " + name;
+    } else {
+        return "Goodbye, " + name;
+    }
+}
