@@ -109,20 +109,20 @@ console.log(power(2, 4)); // should print 16
 
 function fizzBuzz(max) {
     let i = 1;
+    let result;
     while (i <= max) {
-        if (i % 15 === 0) {
-            console.log("FizzBuzz");
-        } else if (i % 5 === 0) {
-            console.log("Buzz");
-        } else if (i % 3 === 0) {
-            console.log("Fizz");
-        } else {
-            console.log(i);
+        result = "";
+        if (i % 3 === 0) {
+            result += "Fizz";
         }
+        if (i % 5 === 0) {
+            result += "Buzz"
+        }
+        console.log(result || i);
         i++;
     }
 }
-fizzBuzz(125);
+fizzBuzz(25);
 
 // Rewrite your laugh function from the recursion exercises so that instead of 
 // using recursion, it uses a while loop and a variable instead.
@@ -168,9 +168,18 @@ function counting(n) {
 // going to the front. You'll need to look up the .slice() method.
 
 function spellBackwards(inputString) {
-    // TODO: your code here
+    let backString = ""; // output string
+    let i = inputString.length;  // loop counter
+
+    while (i >= 0) {
+        backString += inputString.slice(i, i + 1)
+        i--;
+    }
+
+    return backString;
 }
 
+console.log("\'Yo Mama!\' spelled backwards is: \'" + spellBackwards("Yo Mama!") + "\'");
 
 // NIGHTMARE MODE ------------------------------------------
 // You have guests coming to a party! Each guest is assigned a number. Introduce each new guest 
@@ -188,8 +197,30 @@ It doesn't have to be identical!
 
 // Hint: \n creates a new line.
 
+function welcomeTheGuests(numGuests) {
+    let i = 1;
+    let intro = "";
+    while (i <= numGuests) {
+        intro = "Welcome " + i;
+        if (i > 1) {
+            intro += ", meet " + meet(numGuests); 
+        }
+        i++
+    }
+    console.log(intro);
+}
 
+function meet(numGuests) {
+    if (numGuests === 1) {
+        console.log(numGuests + "!");
+    } else {
+        meet(numGuests - 1);
+        console.log(", " + numGuests);
+    }
+    return;
+}
 
+welcomeTheGuests(5);
 
 // Declare a function that will print out a Christmas tree! The function takes two parameters:
 // char: a single character string
@@ -199,7 +230,7 @@ It doesn't have to be identical!
 
 // Example:
 
-christmasTree("T", 5);
+console.log(christmasTree("T", 5));
 
 /* S hould return:
 
@@ -212,7 +243,41 @@ Take care with spaces and new lines.
 */
 
 function christmasTree(char, n){
+    let i = 1;
+    let j = 1;
+    let tree = "";
+    while (i <= n) {
+        if (i === 1){
+            //write char at position n
+            while (j < n){
+                tree += " ";
+                j++;
+            }
+            tree += char + "\n";
+        } else if (i === 2){
+            //char at position n
+            j = 1;
+            while (j < (n - 1)){
+                tree += " ";
+                j++;
+            }
+            tree += char + " " + char + "\n";
 
+        } else if (i === n) {
+            j = 1;
+            while (j <= n * 2) {
+                if (j % 2 === 1) {
+                    tree += char;
+                } else {
+                    tree += " ";
+                }
+                j++;
+            }
+            tree += "\n";
+        }
+        i++;
+    }
+    return tree;
 }
 
 
