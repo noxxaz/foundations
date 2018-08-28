@@ -1,4 +1,5 @@
 "use strict"
+// "ewes tricked"
 console.log("Welcome to Code Chrysalis Foundations!");
 
 // WARMUP: Declare a function countCharacters that, when given a string as an argument, 
