@@ -9,12 +9,10 @@ console.log(countCharacters("Mississippi"));
 // {M: 1, i: 4, s: 4, p: 2}
 
 function countCharacters(someStr) {
-    let result = {};
-    let char = "";
+    const result = {};
     for (let i = 0; i < someStr.length; i++) {
-        char = someStr.slice(i, i + 1);
-        if (!result[char]) { result[char] = 0; }
-        result[char]++;
+        if (!result[someStr[i]]) result[someStr[i]] = 0; 
+        result[someStr[i]]++;
     }
     return result;
 }
