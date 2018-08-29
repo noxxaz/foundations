@@ -17,3 +17,29 @@ function countCharacters(someStr) {
     }
     return result;
 }
+
+// Function callbacks
+const doSomething = function(number, action) {
+    console.log(typeof action);
+    return action(number);
+  };
+  
+console.log( doSomething(10, function(x) {return 3 * x;}));
+
+const triple = function(x) {
+    return 3 * x;
+}
+console.log(doSomething(6, triple)); // returns 18
+
+// Declare a function doSomethingElse that accepts three parameters. 
+// The first is a number, the second is a function (doSomething) and 
+// the third is any function. Call doSomethingElse with triple to create 
+// the same return AND print the result of doSomething().
+
+doSomethingElse(6, doSomething, triple); // prints and returns 18
+
+function doSomethingElse(num, func1, func2) {
+    let result = func1(num, func2);
+    console.log(result);
+    return result;
+}
