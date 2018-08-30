@@ -43,3 +43,38 @@ function doSomethingElse(num, func1, func2) {
     console.log(result);
     return result;
 }
+
+// HOMEWORK:
+// Declare a function called addFive that adds 5 to a number. 
+// Create a second function called updateEvery and use addFive() 
+// as a callback to update every value in the following array:
+
+const numbers = [4, 6, 10, 65, 7];
+
+const addFive = function(n) {
+    return n + 5;
+}
+
+function updateEvery(someArray, someFunction) {
+    for (let i = 0; i < someArray.length; i++) {
+        someArray[i] = someFunction(someArray[i]);
+    }
+    return someArray;
+}
+
+console.log(updateEvery(numbers, addFive));
+// returns [9, 11, 15, 70, 12]
+
+// arrays are passed by reference so our function affected the original array
+console.log(numbers);
+
+// Declare a new function that returns true if a number is even and 
+// false if it is odd. Use this new function to return an array of 
+// the odd and even (true/false) values from numbers in Task 1 (e.g.
+// [false, false, false, true, true]).
+
+const isEven = function(n) {
+    return (n % 2 === 0);
+}
+
+console.log(updateEvery(numbers, isEven));
