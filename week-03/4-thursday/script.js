@@ -186,10 +186,39 @@ console.log(sumByAllElementsMultipliedByFour([1, 2, 3, 4, 5, 6])); // => 84
 // function. The function will be invoked upon each element in the array, and its 
 // result will be used to compute the sum.
 
-function sumBy(numbers, f) {}
+console.log("sumBy() -----------------------------------------------------------")
+
+function sumBy(numbers, f) {
+    let result = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        result += f(numbers[i]);
+    }
+    return result;
+}
 const numbers = [1, 2, 3, 4];
-sumBy(numbers, square); // => 30
-sumBy(numbers, function(number) {
+console.log(sumBy(numbers, square)); // => 30
+console.log(sumBy(numbers, function(number) {
   return number * 4;
-});
+}));
 // => 40
+
+// How can you use sumBy to compute the sum of an array of numbers?
+console.log(sumBy(numbers, function(number) {
+    return number;
+})); // => 10
+
+// Write a function productBy that works like sumBy, but for products (multiplication).
+console.log("productBy() -----------------------------------------------------------")
+
+function productBy(numbers, f) {
+    let result = 1;
+    for (let i = 0; i < numbers.length; i++) {
+        result *= f(numbers[i]);
+    }
+    return result;
+}
+console.log(productBy(numbers, square)); // => 576
+console.log(productBy(numbers, function(number) {
+  return number * 4;
+})); // => 6144
+
