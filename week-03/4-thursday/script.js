@@ -124,3 +124,72 @@ function squareAll(numArray) {
 console.log(squareAll([1, 2, 3, 4])); // => [1, 4, 9, 16]
 
 // Medium exercises -------------------------------------------------------
+
+// Write a function called product that calculates the product of an array of 
+// numbers using a for-loop. Then refactor product using each
+console.log("product() ----------------------------------------------")
+
+function product(numArray) {
+    let result = 1;
+
+//    for (let i = 0; i < numArray.length; i++) {
+//        result = result * numArray[i];
+//    }
+    each(numArray, function(number) {
+        result = result * number;
+    });
+    
+    return result;
+}
+
+console.log(product([1, 2, 3, 4, 5])); // => 120
+
+
+// Write a function called odds that accepts an array as a parameter and 
+// returns an array of just the odd numbers. Please write it using each.
+console.log("odds() ----------------------------------------------")
+
+function odds(numArray) {
+    const newArray = [];
+
+    each(numArray, function(number) {
+        if (number % 2 > 0) newArray.push(number);
+    });
+
+    return newArray;
+}
+
+console.log(odds([1, 2, 3, 4, 5, 6, 7, 8, 9])); // => [1, 3, 5, 7, 9]
+
+// Write a function sumByAllElementsMultipliedByFour that takes an array 
+// as an argument and returns the sum of all elements multiplied by four.
+
+
+console.log("sumByAllElementsMultipliedByFour() ----------------------------------")
+
+function sumByAllElementsMultipliedByFour(numArray) {
+    let result = 0;
+
+    each(numArray, function(number) {
+        result += (4 * number); 
+    });
+
+    return result;
+}
+
+console.log(sumByAllElementsMultipliedByFour([1, 2, 3, 4, 5, 6])); // => 84
+
+
+// Medium exercises -------------------------------------------------------
+
+// Write a function sumBy that accepts two arguments: an array of numbers and a 
+// function. The function will be invoked upon each element in the array, and its 
+// result will be used to compute the sum.
+
+function sumBy(numbers, f) {}
+const numbers = [1, 2, 3, 4];
+sumBy(numbers, square); // => 30
+sumBy(numbers, function(number) {
+  return number * 4;
+});
+// => 40
