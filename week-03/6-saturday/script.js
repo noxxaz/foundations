@@ -170,13 +170,25 @@ console.log(donationAccount());
 // everytime it is invoked. Then, if the age is over 13, return true– 
 // and if it is under 13, return false.
 
-function createWebsiteAccount(age) {}
+function createWebsiteAccount(age) {
+    let savedAge = age;
+
+    function incrementAge(){
+        savedAge++;
+        if (savedAge < 13) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    return incrementAge;
+}
 
 // Test cases
-// const childAccount = createWebsiteAccount(10);
-// childAccount(); // => false
-// childAccount(); // => false
-// childAccount(); // => true (the child is now 13!)
+ const childAccount = createWebsiteAccount(10);
+ console.log(childAccount()); // => false
+ console.log(childAccount()); // => false
+ console.log(childAccount()); // => true (the child is now 13!)
 
-// const adultAccount = createWebsiteAccount(33);
-// adultAccount(); // => true (no matter how many times it is invoked)
+ const adultAccount = createWebsiteAccount(33);
+ console.log(adultAccount()); // => true (no matter how many times it is invoked)
