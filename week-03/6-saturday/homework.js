@@ -38,10 +38,14 @@ function each1(array, func) {
 // e.g.:
 
 function indexedExponentials(numbers) {
-  // TODO: your code here
+  const result = [];
+  each1(numbers, function(number, index) {
+    result.push(number ** index);
+  });
+  return result;
 }
 
-indexedExponentials([2, 5, 7, 4]); // => [2^0, 5^1, 7^2, 4^3] => [1, 5, 49, 64]
+console.log(indexedExponentials([2, 5, 7, 4])); // => [2^0, 5^1, 7^2, 4^3] => [1, 5, 49, 64]
 
 // Write a function called evenIndexedOddNumbers that, when given an array
 // of numbers as an argument, returns an array of only the odd numbers with
