@@ -1,2 +1,2 @@
 # foundations
-JavaScript Homework from Code Chrysalis Foundations course
+JavaScript Homework from CC Foundations course
