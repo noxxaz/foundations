@@ -78,3 +78,35 @@ const stooges = [
 console.log(pluck(stooges, "name")); // => ["moe", "larry", "curly"]
 // Rewrite the above using the built-in .map function for arrays.
 
+// NOBEL PRIZES -----------------------------------------------------
+
+// Declare a function called laureatesByYear that returns an array of all
+// the laureates for the given year.
+
+function laureatesByYear(year) {
+    const result = [];
+    for (let i = 0; i < nobels.prizes.length; i++)
+        if (nobels.prizes[i].year === year) {
+            result.push(nobels.prizes[i].laureates);
+        }
+    return result;
+}
+console.log(laureatesByYear(2017));
+
+// Declare a function called laureatesByField that takes a category string
+// and returns an array of all the laureates for that particular field.
+
+function laureatesByField(category) {}
+
+// Declare a function called getLaureates that two inputs: a year number
+// and a category string. It should return an array of laureates for that
+// particular category in that particular year.
+
+function getLaureates(year, category) {}
+// Declare a function called totalLaureates that takes a category input
+// string and returns the total number of laureates for the given category
+// in Nobel history.
+
+function totalLaureates(category) {}
+
+
