@@ -2,8 +2,8 @@
 console.log("Welcome to Code Chrysalis Foundations!");
 
 // write a function called "product" that takes a number parameter of "a"
-// and returns another function that takes another parameter called "b". 
-// This returned function should itself return the product (multiplication) 
+// and returns another function that takes another parameter called "b".
+// This returned function should itself return the product (multiplication)
 // of a and b.
 
 function product(a) {
@@ -45,8 +45,8 @@ const oneAddedNums = map(numbers, addOne);
 console.log(tripledNums, " should equal [3, 6, 9, 12, 15]");
 console.log(oneAddedNums, " should equal [2, 3, 4, 5, 6]");
 
-// Using the map function that you wrote above, declare a function 
-// called pluck that takes an array of objects and a string (the key) 
+// Using the map function that you wrote above, declare a function
+// called pluck that takes an array of objects and a string (the key)
 // and returns a new array of property values using the string.
 
 function pluck(objArray, key) {
@@ -79,34 +79,62 @@ console.log(pluck(stooges, "name")); // => ["moe", "larry", "curly"]
 // Rewrite the above using the built-in .map function for arrays.
 
 // NOBEL PRIZES -----------------------------------------------------
-
 // Declare a function called laureatesByYear that returns an array of all
 // the laureates for the given year.
-
 function laureatesByYear(year) {
-    const result = [];
+    let result = [];
     for (let i = 0; i < nobels.prizes.length; i++)
-        if (nobels.prizes[i].year === year) {
-            result.push(nobels.prizes[i].laureates);
+        if (nobels.prizes[i].year == year) {
+            result = result.concat(nobels.prizes[i].laureates);
         }
     return result;
+
 }
+console.log("Nobel Laureates from 2017:--------------")
 console.log(laureatesByYear(2017));
 
 // Declare a function called laureatesByField that takes a category string
 // and returns an array of all the laureates for that particular field.
-
-function laureatesByField(category) {}
+function laureatesByField(category) {
+    let result = [];
+        for (let i = 0; i < nobels.prizes.length; i++)
+            if (nobels.prizes[i].category == category) {
+                result = result.concat(nobels.prizes[i].laureates);
+            }
+    return result;
+}
+console.log("Nobel Laureates in Economics:--------------")
+console.log(laureatesByField("economics"));
 
 // Declare a function called getLaureates that two inputs: a year number
 // and a category string. It should return an array of laureates for that
 // particular category in that particular year.
+function getLaureates(year, category) {
+    let result = [];
+    for (let i = 0; i < nobels.prizes.length; i++)
+        if (nobels.prizes[i].year == year) {
+            if(nobels.prizes[i].category == category) {
+                result = result.concat(nobels.prizes[i].laureates);
+            }
+        }
+    return result;
+}
+console.log("Nobel Laureates from 2010 in Physics:--------------")
+console.log(getLaureates(2010, "physics"));
 
-function getLaureates(year, category) {}
 // Declare a function called totalLaureates that takes a category input
 // string and returns the total number of laureates for the given category
 // in Nobel history.
+function totalLaureates(category) {
+    let result = [];
+        for (let i = 0; i < nobels.prizes.length; i++)
+            if (nobels.prizes[i].category == category) {
+                result = result.concat(nobels.prizes[i].laureates);
+            }
+        return result.length;
+}
+console.log("# of Nobel Laureates in Economics:--------------")
+console.log(totalLaureates("economics"));
 
-function totalLaureates(category) {}
 
 
