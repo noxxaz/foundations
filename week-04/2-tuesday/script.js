@@ -83,12 +83,17 @@ console.log(pluck(stooges, "name")); // => ["moe", "larry", "curly"]
 // the laureates for the given year.
 function laureatesByYear(year) {
     let result = [];
-    for (let i = 0; i < nobels.prizes.length; i++)
-        if (nobels.prizes[i].year == year) {
-            result = result.concat(nobels.prizes[i].laureates);
-        }
-    return result;
+    // for (let i = 0; i < nobels.prizes.length; i++)
+    //     if (nobels.prizes[i].year == year) {
+    //         result = result.concat(nobels.prizes[i].laureates);
+    //     }
+    // return result;
 
+    return nobels.prizes.map(function(myObj) {
+        if (myObj.year == year) {
+            return myObj.laureates;
+        }
+    });
 }
 console.log("Nobel Laureates from 2017:--------------")
 console.log(laureatesByYear(2017));
