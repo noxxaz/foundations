@@ -1,4 +1,8 @@
-const nobels = {
+// nobels.js
+// data structure representing all nobel prize winners
+// ---------------------------------------------------
+
+module.export = {
   prizes: [
     {
       year: "2017",

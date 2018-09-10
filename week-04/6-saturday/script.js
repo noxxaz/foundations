@@ -1,6 +1,12 @@
 "use strict"
 console.log("Welcome to Code Chrysalis Foundations!");
 
+// IMPORT nobels.js
+const nobels = require("./nobel.js");
+
+console.log(typeof nobels);
+console.log(typeof nobels.prizes);
+
 // WARMUP: Using the nobel data, write a function called laureatesByYear 
 // that returns an array of all the laureates for the given year.
 
